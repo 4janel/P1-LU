@@ -1,0 +1,44 @@
+<!--Realizado por Manuel Alexander Ajanel Jerónimo-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/p1.js"></script>
+    <title>Proyectos LevelUp</title>
+</head>
+<body>
+    <h1>Proyecto 1</h1>
+    <p>Crear una función que tome un objeto y devuelva las keys y values como matrices separadas. 
+        Devuelve las keys ordenadas alfabéticamente, y sus correspondientes values en el mismo orden.
+    </p>
+    <pre><code>keysAndValues({ a: 1, b: 2, c: 3 }); 
+→ [["a", "b", "c"], [1, 2, 3]]
+keysAndValues({ a: "Apple", b: "Microsoft", c: "Google" });
+→ [["a", "b", "c"], ["Apple", "Google", "Microsoft"]]
+keysAndValues({ key1: true, key2: false, key3: undefined });
+→ [["key1", "key2", "key3"], [true, false, undefined]]
+    </code></pre>
+    <h2>Resolución:</h2>
+    <pre><code>
+            function keysAndValues(obj) {
+                let claves = [];
+                let valores = [];
+                for (let elemento in obj) {
+                  claves.push(elemento);
+                  valores.push(obj[elemento]);
+                }
+              
+                let resultado = [claves.sort(), valores.sort()];
+                console.log({resultado});
+              }
+            
+            keysAndValues({ a: 1, b: 2, c: 3 });
+            keysAndValues({ a: "Apple", b: "Microsoft", c: "Google" });
+            keysAndValues({ key1: true, key2: false, key3: undefined });
+    </code></pre>
+    <p>Nota: ver resultados en la consola.</p>
+</body>
+</html>
